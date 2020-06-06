@@ -1,6 +1,11 @@
+---
+layout: default
+---
 
-<title>Projects </title>
 
-<p> A list of projects may live here. </p>
+#Projects
 
+A list of projects may live here.
+
+[Back to index.]("./index.html")
 

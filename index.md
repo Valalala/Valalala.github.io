@@ -1,11 +1,10 @@
 ---
 layout: default
+title: Valalala | Your one stop shop for all the projects that I have worked on.
 ---
 
 
-<title>Valalala | Your one stop shop for all the projects that I have worked on.</title>
+This is a Jekyll test.
 
-<p> This is a Jekyll test.</p>
-
-<p><a href="./projects.html">Link to projects page. </a>.</p>
+[Link to projects page.]("./projects.html")
 
