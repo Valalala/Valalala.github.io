@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Valalala | Your one stop shop for all the projects that I have worked on.
+title: Valalala | Your one stop shop for all the projects I have worked on.
 ---
 
 
