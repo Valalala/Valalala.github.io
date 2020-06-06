@@ -3,9 +3,9 @@ layout: default
 ---
 
 
-#Projects
+# Projects
 
 A list of projects may live here.
 
-[Back to index.]("./index.html")
+[Back to index.](./index.html)
 
