@@ -1,3 +1,7 @@
+
+Welcome to my website's repository. The actual site can be found [here](https://valalala.github.io). Thanks for visiting!
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Valalala/Valalala.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
