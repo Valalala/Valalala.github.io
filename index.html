@@ -1,6 +1,8 @@
 
  <!DOCTYPE html>
 <!-- Template by html.am -->
+<!-- CSS: https://www.w3schools.com -->
+<!-- Translations: https://omniglot.com/language/phrases/hello.htm -->
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,6 +25,20 @@
 				margin: 0;
 				padding-top: 15px;
 			}
+
+			.btn {
+				border: none;
+				background-color: inherit;
+				height: 0;
+				padding: 0;
+				font-size: inherit;
+				cursor: pointer;
+				display: inline-block;
+				font-weight: inherit;
+			}
+
+			/* On mouse-over */
+			.btn:hover {background: #eee;}
 			
 			main {
 				padding-bottom: 10010px;
@@ -77,6 +93,17 @@
 			}
 		
 		</style>
+
+		<script type="text/javascript">
+			var hellos=["Hello", "Hallo", "你好", "و عليكم السلام", "Hej", "Dobrý den", "ᎣᏏᏲ", "Terve", "Καλώς Ορίσατε", "Aloha", "שלום", "नमस्ते", "Jó napot kívánok", "Dia dhuit", "Salve", "今日は", "안녕하십니까", "Kia ora", "Сайн уу?", "Cześć", "Olá", "Здравствуйте!", "Malō soifua", "¡Hola!", "Habari", "Grüezi", "สวัสดี", "བཀྲ་ཤིས་བདེ་ལེགས།", "Á-lô!", "Saluton"];
+			var langs = ["English", "Dutch, German, etc", "Chinese, Taiwanese, etc", "Arabic", "Danish", "Czech", "Cherokee", "Finnish", "Greek", "Hawaiian", "Hebrew", "Hindi", "Hungarian", "Irish", "Italian", "Japanese", "Korean", "Maori", "Mongolian", "Polish", "Portuguese", "Russian", "Samoan", "Spanish", "Swahili", "Swiss", "Thai", "Tibetan", "Vietnamese", "Esperanto"];
+			var hello = 0;
+			function changeHello(){
+				hello = Math.floor(Math.random()*hellos.length);
+				document.getElementById("myHello").innerHTML = hellos[hello];
+				document.getElementById("myHello").title = "This is hello in " + langs[hello] + ".";
+			}
+		</script>
 	
 	</head>
 	
@@ -93,7 +120,8 @@
 			<main>
 				<div id="content">
 					<div class="innertube">
-						<h1>Hello. </h1>
+						<h1><button class="btn" onclick="changeHello()"><span title="Click for hello in a new language." id="myHello">Hello</span></button></h1>
+						<!-- <h1>Hello</h1> -->
 						<p>Hi, my name is Walter. I like working on projects that present concepts from a new angle and force me to learn a new skill set, or build on an old one, to progress. I also like to work on independent projects. Those will slowly show up on the sidebar. </p>
 						<h2>Contact</h2>
 						<p>walter.e.o.rasmussen@gmail.com</p>
