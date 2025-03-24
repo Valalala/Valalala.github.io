@@ -6,7 +6,8 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Valalala | Your one stop shop for some of the projects I have worked on.</title>
+		<!-- <title>Valalala | Your one stop shop for some of the projects I have worked on.</title> -->
+		<title>Valalala</title>
 		<style type="text/css">
 		
 			body {
@@ -91,10 +92,97 @@
 				color: darkgreen;
 				text-decoration: none;
 			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			/* Position the image container (needed to position the left and right arrows) */
+			.container {
+				position: relative;
+			}
+
+			/* Hide the images by default */
+			.mySlides {
+				display: none;
+			}
+
+			/* Add a pointer when hovering over the thumbnail images */
+			.cursor {
+				cursor: pointer;
+			}
+
+			/* Next & previous buttons */
+			.prev,
+			.next {
+				cursor: pointer;
+				position: absolute;
+				top: 40%;
+				width: auto;
+				padding: 16px;
+				margin-top: -50px;
+				color: white;
+				font-weight: bold;
+				font-size: 20px;
+				border-radius: 0 3px 3px 0;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover,
+			.next:hover {
+				background-color: rgba(0, 0, 0, 0.8);
+			}
+
+			/* Number text (1/3 etc) */
+			.numbertext {
+				color: #f2f2f2;
+				font-size: 12px;
+				padding: 8px 12px;
+				position: absolute;
+				top: 0;
+			}
+
+			/* Container for image text */
+			.caption-container {
+				text-align: center;
+				background-color: #222;
+				padding: 2px 16px;
+				color: white;
+			}
+
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			/* Six columns side by side */
+			.column {
+				float: left;
+				width: 16.66%;
+			}
+
+			/* Add a transparency effect for thumnbail images */
+			.demo {
+				opacity: 0.6;
+			}
+
+			.active,
+			.demo:hover {
+				opacity: 1;
+			}
 		
 		</style>
 
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			var hellos=["Hello", "Hallo", "你好", "و عليكم السلام", "Hej", "Dobrý den", "ᎣᏏᏲ", "Terve", "Καλώς Ορίσατε", "Aloha", "שלום", "नमस्ते", "Jó napot kívánok", "Dia dhuit", "Salve", "今日は", "안녕하십니까", "Kia ora", "Сайн уу?", "Cześć", "Olá", "Здравствуйте!", "Malō soifua", "¡Hola!", "Habari", "Grüezi", "สวัสดี", "བཀྲ་ཤིས་བདེ་ལེགས།", "Á-lô!", "Saluton"];
 			var langs = ["English", "Dutch, German, etc", "Chinese, Taiwanese, etc", "Arabic", "Danish", "Czech", "Cherokee", "Finnish", "Greek", "Hawaiian", "Hebrew", "Hindi", "Hungarian", "Irish", "Italian", "Japanese", "Korean", "Maori", "Mongolian", "Polish", "Portuguese", "Russian", "Samoan", "Spanish", "Swahili", "Swiss", "Thai", "Tibetan", "Vietnamese", "Esperanto"];
 			var hello = 0;
@@ -103,7 +191,42 @@
 				document.getElementById("myHello").innerHTML = hellos[hello];
 				document.getElementById("myHello").title = "This is hello in " + langs[hello] + ".";
 			}
+		</script> -->
+
+		<!-- https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+		<script type="text/javascript">
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			// Thumbnail image controls
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("demo");
+				let captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
 		</script>
+
 	
 	</head>
 	
@@ -120,12 +243,77 @@
 			<main>
 				<div id="content">
 					<div class="innertube">
-						<h1><button class="btn" onclick="changeHello()"><span title="Click for hello in a new language." id="myHello">Hello</span></button></h1>
-						<!-- <h1>Hello</h1> -->
-						<p>Hi, my name is Walter. I like working on projects that present concepts from a new angle and force me to learn a new skill set, or build on an old one, to progress. I also like to work on independent projects. Those will slowly show up on the sidebar. </p>
+						<!-- <h1><button class="btn" onclick="changeHello()"><span title="Click for hello in a new language." id="myHello">Hello</span></button></h1> -->
+						<h1>Hello</h1>
+						<!-- <p>Hi, my name is Walter. I like working on projects that present concepts from a new angle and force me to learn a new skill set, or build on an old one, to progress. I also like to work on independent projects. Those will slowly show up on the sidebar. </p> -->
+						<p>Hi, my name is Walter. Here is some stuff I have worked on. Look to the sidebar for more. </p>
+						<h2>Work</h2>
+
+						<!-- <h2 style="text-align:center">Slideshow Gallery</h2> -->
+
+						<div class="container">
+							<div class="mySlides">
+								<div class="numbertext">1 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+								<div class="numbertext">2 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+								<div class="numbertext">3 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+								
+							<div class="mySlides">
+								<div class="numbertext">4 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+								<div class="numbertext">5 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+								
+							<div class="mySlides">
+								<div class="numbertext">6 / 6</div>
+								<img src="images/LocalSubdivCube.gif" style="width:100%">
+							</div>
+								
+							<a class="prev" onclick="plusSlides(-1)">❮</a>
+							<a class="next" onclick="plusSlides(1)">❯</a>
+
+							<div class="caption-container">
+								<p id="caption"></p>
+							</div>
+
+							<div class="row">
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+								</div>
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+								</div>
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+								</div>
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+								</div>
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+								</div>    
+								<div class="column">
+								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+								</div>
+							</div>
+						</div>
+
 						<h2>Contact</h2>
 						<p>walter.e.o.rasmussen@gmail.com</p>
-						<p><a href="https://www.linkedin.com/in/walter-rasmussen-3a834412a">My Linkedin </a> </p>
+						<!-- <p><a href="https://www.linkedin.com/in/walter-rasmussen-3a834412a">My Linkedin </a> </p> -->
 						<p><a href="WalterRasmussenResume.pdf">Resume </a> </p>
 						
 					</div>
@@ -137,6 +325,7 @@
 					<h3>Projects</h3>
 					<ul>
 						<li><a href="https://github.com/Valalala/vrTestDemos">vrTestDemos</a></li>
+						<li><a href="InfiniteHouse.html">InfiniteHouse</a></li>
 						<!-- <li><a href="#">Link 2</a></li>
 						<li><a href="#">Link 3</a></li>
 						<li><a href="#">Link 4</a></li>
@@ -165,7 +354,7 @@
 		
 		<footer id="footer">
 			<div class="innertube">
-				<p>Thanks for visiting. </p>
+				<!-- <p>Thanks for visiting. </p> -->
 			</div>
 		</footer>
 	
