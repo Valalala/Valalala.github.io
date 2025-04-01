@@ -100,11 +100,17 @@
 			/* Position the image container (needed to position the left and right arrows) */
 			.container {
 				position: relative;
+				max-width: 80%;
 			}
 
 			/* Hide the images by default */
 			.mySlides {
 				display: none;
+			}
+
+			.responsive {
+				max-height: 600px;
+				width: 100%;
 			}
 
 			/* Add a pointer when hovering over the thumbnail images */
@@ -212,7 +218,7 @@
 				let i;
 				let slides = document.getElementsByClassName("mySlides");
 				let dots = document.getElementsByClassName("demo");
-				let captionText = document.getElementById("caption");
+				// let captionText = document.getElementById("caption");
 				if (n > slides.length) {slideIndex = 1}
 				if (n < 1) {slideIndex = slides.length}
 				for (i = 0; i < slides.length; i++) {
@@ -223,7 +229,7 @@
 				}
 				slides[slideIndex-1].style.display = "block";
 				dots[slideIndex-1].className += " active";
-				captionText.innerHTML = dots[slideIndex-1].alt;
+				// captionText.innerHTML = dots[slideIndex-1].alt;
 			}
 		</script>
 
@@ -253,48 +259,58 @@
 
 						<div class="container">
 							<div class="mySlides">
-								<div class="numbertext">1 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">1 / 6</div> -->
+								<img src="images/LocalSubdivCube.gif" class="responsive">
+								<p>Localized subdivision using Blender's geometry nodes. Made as an answer to a Blender Stack Exchange question, found <a href="https://blender.stackexchange.com/questions/274918/how-to-subdivide-a-selection-of-faces-in-geometry-nodes/279535#279535">here</a>. </p>
 							</div>
 
 							<div class="mySlides">
-								<div class="numbertext">2 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">2 / 6</div> -->
+								<!-- <img src="images/DirectionalDynaPaint.gif" class="responsive"> -->
+								<video class="responsive" muted autoplay style="pointer-events: none;">
+									<source src="images/DirectionalDynaPaint.webm" type="video/webm">
+									Your browser does not support the video tag.
+								</video>
+								<p>A proof of concept for creating materials that react to the direction of another object as they brush against each other; for example a hand touching fabric, short fur, etc. Made using dynamic paint and drivers in Blender. </p>
 							</div>
 
 							<div class="mySlides">
-								<div class="numbertext">3 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">3 / 6</div> -->
+								<img src="images/LocalSubdivCube.gif" class="responsive">
 							</div>
 								
 							<div class="mySlides">
-								<div class="numbertext">4 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">4 / 6</div> -->
+								<img src="images/LocalSubdivCube.gif" class="responsive">
 							</div>
 
 							<div class="mySlides">
-								<div class="numbertext">5 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">5 / 6</div> -->
+								<img src="images/LocalSubdivCube.gif" class="responsive">
 							</div>
 								
 							<div class="mySlides">
-								<div class="numbertext">6 / 6</div>
-								<img src="images/LocalSubdivCube.gif" style="width:100%">
+								<!-- <div class="numbertext">6 / 6</div> -->
+								<img src="images/LocalSubdivCube.gif" class="responsive">
 							</div>
 								
 							<a class="prev" onclick="plusSlides(-1)">❮</a>
 							<a class="next" onclick="plusSlides(1)">❯</a>
 
-							<div class="caption-container">
+							<!-- <div class="caption-container">
 								<p id="caption"></p>
-							</div>
+							</div> -->
 
 							<div class="row">
 								<div class="column">
 								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
 								</div>
 								<div class="column">
-								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+								<!-- <img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre"> -->
+								<video class="demo cursor"  muted autoplay style="pointer-events: none; width:100%;" onclick="currentSlide(2)" alt="Cinque Terre">
+									<source src="images/DirectionalDynaPaint.webm" type="video/webm">
+									Your browser does not support the video tag.
+								</video>
 								</div>
 								<div class="column">
 								<img class="demo cursor" src="images/LocalSubdivCube.gif" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
